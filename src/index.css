@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-netflix-red: #e50914;
+  --color-netflix-black: #141414;
+}
+
+body {
+  background-color: var(--color-netflix-black);
+  color: white;
+  @apply font-sans selection:bg-red-600;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+.animate-shimmer {
+  background-size: 200% auto;
+  animation: shimmer 2s linear infinite;
+}
