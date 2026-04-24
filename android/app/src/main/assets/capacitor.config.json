@@ -1,0 +1,20 @@
+{
+  "appId": "com.nikkkexe.zestyyflix",
+  "appName": "Zestyyflix",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "allowMixedContent": true
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2500,
+      "launchAutoHide": true,
+      "backgroundColor": "#141414",
+      "androidSplashResourceName": "splash",
+      "showSpinner": false
+    }
+  }
+}

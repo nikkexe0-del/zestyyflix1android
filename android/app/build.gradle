@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+    namespace "com.nikkkexe.zestyyflix"
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.nikkkexe.zestyyflix"
+        minSdk 22
+        targetSdk 34
+        versionCode 1
+        versionName "1.0.0"
+    }
+
+    // Keystore is committed directly in android/app/zestyyflix.keystore
+    // All values hardcoded — zero GitHub secrets needed
+    signingConfigs {
+        release {
+            storeFile file("zestyyflix.keystore")
+            storePassword "zestyyflix2024secure"
+            keyAlias "zestyyflix"
+            keyPassword "zestyyflix2024secure"
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+}
+
+repositories {
+    google()
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':capacitor-android')
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.webkit:webkit:1.9.0'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.2.0'
+    implementation 'androidx.core:core-splashscreen:1.0.1'
+}
