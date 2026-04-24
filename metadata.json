@@ -1,0 +1,6 @@
+{
+  "name": "Zestyflix",
+  "description": "A Netflix clone with movie and TV series streaming using vidsrc and TMDB.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
